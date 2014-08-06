@@ -35,6 +35,7 @@ class AddressTest(unittest.TestCase):
             instance_id=1,
             public_ip="192.168.1.1",
             allow_reassociation=False,
+            network_interface_id=None,
             dry_run=False
         )
 
@@ -79,6 +80,7 @@ class AddressWithAllocationTest(unittest.TestCase):
             instance_id=1,
             public_ip="192.168.1.1",
             allocation_id="aid1",
+            network_interface_id=None,
             allow_reassociation=False,
             dry_run=False
         )
@@ -86,7 +88,7 @@ class AddressWithAllocationTest(unittest.TestCase):
     def test_disassociate_calls_connection_disassociate_address_with_correct_args(self):
         self.address.disassociate()
         self.address.connection.disassociate_address.assert_called_with(
-            association_id="aid1",
+            public_ip="192.168.1.1",
             dry_run=False
         )
 
@@ -132,7 +134,7 @@ class AddressWithNetworkInterfaceTest(unittest.TestCase):
     def test_disassociate_calls_connection_disassociate_address_with_correct_args(self):
         self.address.disassociate()
         self.address.connection.disassociate_address.assert_called_with(
-            association_id="aid1",
+            public_ip="192.168.1.1",
             dry_run=False
         )
 
