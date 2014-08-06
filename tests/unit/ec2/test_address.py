@@ -36,6 +36,7 @@ class AddressTest(unittest.TestCase):
             public_ip="192.168.1.1",
             allow_reassociation=False,
             network_interface_id=None,
+            private_ip_address=None,
             dry_run=False
         )
 
@@ -81,6 +82,7 @@ class AddressWithAllocationTest(unittest.TestCase):
             public_ip="192.168.1.1",
             allocation_id="aid1",
             network_interface_id=None,
+            private_ip_address=None,
             allow_reassociation=False,
             dry_run=False
         )
@@ -126,6 +128,7 @@ class AddressWithNetworkInterfaceTest(unittest.TestCase):
             instance_id=None,
             public_ip="192.168.1.1",
             network_interface_id=1,
+            private_ip_address=None,
             allocation_id="aid1",
             allow_reassociation=False,
             dry_run=False
