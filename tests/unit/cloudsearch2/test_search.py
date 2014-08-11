@@ -116,13 +116,15 @@ class CloudSearchSearchTest(CloudSearchSearchBaseTest):
     def test_cloudsearch_qsearch(self):
         search = SearchConnection(endpoint=HOSTNAME)
 
-        search.search(q='Test')
+        search.search(q='Test', options='TestOptions')
 
         args = self.get_args(HTTPretty.last_request.raw_requestline)
 
-        self.assertEqual(args[b'q'], [b"Test"])
-        self.assertEqual(args[b'start'], [b"0"])
-        self.assertEqual(args[b'size'], [b"10"])
+        self.assertEqual(args['q'], ["Test"])
+        self.assertEqual(args['q.options'], ["TestOptions"])
+        self.assertEqual(args['start'], ["0"])
+        self.assertEqual(args['size'], ["10"])
+
 
     def test_cloudsearch_search_details(self):
         search = SearchConnection(endpoint=HOSTNAME)
