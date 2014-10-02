@@ -5,10 +5,10 @@ boto 2.32.1
 
 Released: 04-Aug-2014
 
-.. image:: https://travis-ci.org/boto/boto.png?branch=develop
+.. image:: https://travis-ci.org/boto/boto.svg?branch=develop
         :target: https://travis-ci.org/boto/boto
 
-.. image:: https://pypip.in/d/boto/badge.png
+.. image:: https://pypip.in/d/boto/badge.svg
         :target: https://pypi.python.org/pypi/boto/
 
 ************
@@ -67,6 +67,8 @@ At the moment, boto supports:
   * Amazon Simple Queue Service (SQS) (Python 3)
   * Amazon Simple Notification Server (SNS) (Python 3)
   * Amazon Simple Email Service (SES) (Python 3)
+  * Amazon Cognito Identity (Python 3)
+  * Amazon Cognito Sync (Python 3)
 
 * Monitoring
 
