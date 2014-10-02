@@ -1,4 +1,5 @@
-# Copyright (c) 2006-2011 Mitch Garnaat http://garnaat.org/
+# Copyright (c) 2014 Amazon.com, Inc. or its affiliates.
+# All Rights Reserved
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the
@@ -18,3 +19,24 @@
 # WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
+#
+from boto.regioninfo import RegionInfo, get_regions
+
+
+def regions():
+    """
+    Get all available regions for the Amazon Cognito Identity service.
+
+    :rtype: list
+    :return: A list of :class:`boto.regioninfo.RegionInfo`
+    """
+    from boto.cognito.identity.layer1 import CognitoIdentityConnection
+    return get_regions('cognito-identity',
+                       connection_cls=CognitoIdentityConnection)
+
+
+def connect_to_region(region_name, **kw_params):
+    for region in regions():
+        if region.name == region_name:
+            return region.connect(**kw_params)
+    return None
