@@ -334,7 +334,6 @@ class IAMConnection(AWSQueryConnection):
             params['Marker'] = marker
         if max_items:
             params['MaxItems'] = max_items
-        import pdb;pdb.set_trace()
         return self.get_response('ListUsers', params, list_marker='Users')
 
     #
