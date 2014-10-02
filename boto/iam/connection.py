@@ -334,7 +334,6 @@ class IAMConnection(AWSQueryConnection):
             params['Marker'] = marker
         if max_items:
             params['MaxItems'] = max_items
-        import pdb;pdb.set_trace()
         return self.get_response('ListUsers', params, list_marker='Users')
 
     #
@@ -1524,7 +1523,3 @@ class IAMConnection(AWSQueryConnection):
         """
         params = {}
         return self.get_response('GetCredentialReport', params)
-
-    def get_account_password_policy(self):
-        params = {}
-        return self.get_response('GetAccountPasswordPolicy', params)
