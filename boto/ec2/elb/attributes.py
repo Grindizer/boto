@@ -19,7 +19,10 @@
 #
 # Created by Chris Huegle for TellApart, Inc.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84b1b3acba26771c8c33c16a09ae95f61a2996d8
 class ConnectionSettingAttribute(object):
     """
     Represents the ConnectionSetting segment of ELB Attributes.
@@ -38,7 +41,10 @@ class ConnectionSettingAttribute(object):
         if name == 'IdleTimeout':
             self.idle_timeout = int(value)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 84b1b3acba26771c8c33c16a09ae95f61a2996d8
 class CrossZoneLoadBalancingAttribute(object):
     """
     Represents the CrossZoneLoadBalancing segement of ELB Attributes.

@@ -80,7 +80,12 @@ ATTRIBUTE_TESTS = [
      [('cross_zone_load_balancing.enabled', False)]),
     (ATTRIBUTE_GET_CS_RESPONSE,
      [('connecting_settings.idle_timeout', 30)]),
+<<<<<<< HEAD
     ]
+=======
+]
+
+>>>>>>> 84b1b3acba26771c8c33c16a09ae95f61a2996d8
 
 
 class TestLbAttributes(unittest.TestCase):
